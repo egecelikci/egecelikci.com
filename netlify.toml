@@ -1,0 +1,5 @@
+[[redirects]]
+    from = "https://egecelikci.netlify.com/*"
+    to = "https://egecelikci.com/:splat"
+    status = 301
+    force = true
