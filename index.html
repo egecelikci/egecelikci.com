@@ -1,3 +1,5 @@
+#!/bin/sh
+<<\EOF
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -11,6 +13,7 @@
     <link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32">
     <link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16">
     <link rel="shortcut icon" href="favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
   <body>
     <div>
@@ -24,3 +27,35 @@
   </div>
   </body>
 </html>
+<!--
+EOF
+#!/bin/sh
+
+EG_GITHUB="https://github.com/egecelikci"
+EG_TWITTER="https://twitter.com/egecelikci"
+
+BLACK='\e[30m'
+RED='\e[31m'
+GREEN='\e[32m'
+YELLOW='\e[33m'
+BLUE='\e[34m'
+MAGENTA='\e[35m'
+CYAN='\e[36m'
+WHITE='\e[37m'
+BRIGHT='\e[1m'
+NORMAL='\e[0m'
+BLINK='\e[6m'
+REVERSE='\e[7m'
+UNDERLINE='\e[4m'
+LINK='\e]8;;'
+ST='\e\'
+
+[ $(id -u) -eq 0 ] && printf "\n\n${RED}${BLINK}${BOLD}${UNDERLINE}DO NOT RUN RANDOM SCRIPTS AS ROOT YOU STUPID IDIOT!${NORMAL}\n\n" && exit 1
+
+printf "\n\n${UNDERLINE}${BLUE}Hello! ${YELLOW}I'm ${BLINK}${YELLOW}egecelikci${NORMAL}"
+printf "\n${BLUE}You can find me here: ${NORMAL}"
+printf "\n\t${GREEN}${LINK}${EG_GITHUB}${ST}${EG_GITHUB}${LINK}${ST}"
+printf "\n\t${GREEN}${LINK}${EG_TWITTER}${ST}${EG_TWITTER}${LINK}${ST}"
+printf "\n"
+
+exit 0
